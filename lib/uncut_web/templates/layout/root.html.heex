@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <%= csrf_meta_tag() %>
+    <%= live_title_tag assigns[:page_title] || "Uncut", suffix: " · Phoenix Framework" %>
+    <link phx-track-static rel="stylesheet" href={Routes.static_path(@conn, "/assets/app.css")}/>  
+    <script defer phx-track-static type="text/javascript" src={Routes.static_path(@conn, "/assets/app.js")}></script>
+  </head>
+  
+  <%# body section %>
+  <body class="has-background-grey-lighter">
+  <section class="hero is-small is-primary">
+  <div class="hero-body">
+     <header>
+    <nav class="navbar-is-expanded" role="navigation" aria-label="main navigation">
+      <div class="navbar-brand">
+        <a class="navbar-item">
+        <span class="icon-text">
+        <span class="icon">
+        <img src={Routes.static_path(@conn, "/images/uncutgems.png")} alt="Uncut Gems Logo" width="110" height="25"/>
+        </span>
+        <span><strong>Uncut Gems</strong></span>
+        </span>
+        </a>
+    </div>
+
+               <div class="navbar-end">
+            <a class="navbar-item is-dark" href="/"><strong>Home</strong></a>
+            <a class="navbar-item" href="/team"><strong>Team</strong></a>
+            <a class="navbar-item" href="/"><strong>Testimonials</strong> </a>
+          </div>
+         
+      </nav>
+<hr class="navbar-divider">
+    </header>
+    </div>
+    </section>
+    <%= @inner_content %>
+  </body>
+  <%# body ends %>
+
+<%# footer starts %>
+<footer class="footer has-background-black">
+<div class="columns">
+<div class="column is-one-third">
+<span class="icon-text">
+    <span class="icon">
+        <img src={Routes.static_path(@conn, "/images/uncutgems.png")} alt="Uncut Gems Logo" width="110" height="25"/>
+        </span>
+        <span class="subtitle has-text-white">Uncut Gems</span>
+        </span>
+<p class="has-text-white">Uncut gems is an anti-fgm foudation<br>that aims at zero tolerance against<br>female genital mutilation</p>
+</div>
+
+<div class="column is-one-third"><h1 class="subtitle has-text-white">Contact Us</h1>
+<span class="icon-text">
+<span class="icon">
+<div class="email"><img src={Routes.static_path(@conn, "/images/email.png")} alt="email icon" width="45" height="20"/>
+</div>
+</span>
+<span class="has-text-white">restorers2017@gmail.com</span>
+</span>
+<br>
+<span class="icon-text">
+<span class="icon">
+<div class="phone"><img src={Routes.static_path(@conn, "/images/phone.png")} alt="call icon" width="45" height="20"/>
+</div>
+</span>
+<span class="has-text-white">+254-759-237-246</span>
+</span>
+<br>
+<span class="icon-text">
+<span class="icon">
+<div class="location"><img src={Routes.static_path(@conn, "/images/location.png")} alt="location icon" width="45" height="20"/>
+</div>
+</span>
+<span class="has-text-white">Lakehub premises Milimani<br>P.O.BOX 2117-40100</span>
+</span>
+</div>
+
+
+<div class="column is-one-third"><h2 class="subtitle has-text-white">Social media handles</h2>
+<span class="icon-text">
+<span class="icon">
+<a class="twitter-logo">
+<%=link to: "https://twitter.com/icutke" do %>
+<img src={Routes.static_path(@conn, "/images/twitter.png")} alt="twitter logo" width="50" height="20"/>
+<% end %>
+</a>
+</span>
+</span>
+
+ 
+<span class="icon-text">
+<span class="icon">
+<a class="linkedin-logo">
+<%=link to: "https://web.facebook.com/iCutApp/?_rdc=1&_rdr" do %>
+<img src={Routes.static_path(@conn, "/images/facebook.png")} alt="linkedin logo" width="50" height="20"/>
+<% end %>
+</a>
+</span>
+</span>
+
+<span class="icon-text">
+<span class="icon">
+<a class="facebook-logo">
+<%=link to: "https://www.instagram.com/teamrestorers/?utm_medium=copy_link"  do%>
+ <img src={Routes.static_path(@conn, "/images/instagram.png")} alt="facebook logo" width="50" height="20"/> 
+ <% end %>
+ </a>
+ </span>
+ </span>
+ </div>
+ </div>
+  </footer>
+  <%# footer ends %>
+</html>
