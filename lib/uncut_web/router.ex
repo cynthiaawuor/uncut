@@ -19,6 +19,7 @@ defmodule UncutWeb.Router do
 
     get "/", PageController, :index
     get "/team", TeamController, :index
+    get "/event", EventController, :index
   end
 
   # Other scopes may use custom stacks.
